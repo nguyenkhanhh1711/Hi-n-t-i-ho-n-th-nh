@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thì Hiện tại hoàn thành – Present Perfect</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;800&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f0e7d6;--card:#fbf6ea;--ink:#241d1a;--red:#d63a2b;--blue:#1d4f91;--pink:#f2a3ad;--mute:#6b5d54;--ok:#2a8a5a;--okb:#dcefe3;--no:#c4302b;--nob:#fbdedb;--line:#d9ccb4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.75 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:hidden}
+#grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:80;opacity:.14;mix-blend-mode:multiply}
+#top{position:fixed;top:0;left:0;right:0;z-index:60;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;background:var(--paper);border-bottom:2px solid var(--ink);transform:translateY(-110%);transition:transform .4s}
+#top.on{transform:none}
+.tb{max-width:920px;margin:0 auto;display:flex;align-items:center;gap:12px;font:600 14px "Be Vietnam Pro"}
+.tb b{font:400 20px Anton;letter-spacing:1px;color:var(--red)}
+.pg{flex:1;height:10px;border:2px solid var(--ink);background:var(--card)}
+.pg i{display:block;height:100%;width:0;background:var(--red);transition:width .5s}
+.tb span{white-space:nowrap}.tb .o{color:var(--ok)}.tb .w{color:var(--no)}
+#snd{border:0;background:none;font-size:20px;cursor:pointer}
+header{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:46px 16px 40px;text-align:center}
+.vert{position:absolute;left:10px;top:60px;font:400 clamp(30px,6vw,62px)/1 Anton;color:var(--red);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:2px}
+.seal{position:absolute;right:16px;top:26px;width:70px;height:70px;border:3px solid var(--red);display:grid;place-items:center;font:400 28px Anton;color:var(--red);transform:rotate(6deg);letter-spacing:1px}
+h1{font:400 clamp(72px,21vw,240px)/.85 Anton;color:var(--red);letter-spacing:-3px;text-shadow:3px 3px 0 #d63a2b33}
+.ko{font:700 clamp(18px,3.4vw,28px) "Noto Sans KR";letter-spacing:6px;margin:4px 0 2px}
+.cap{font:600 12px "Be Vietnam Pro";letter-spacing:4px;color:var(--mute)}
+.frame{position:relative;width:min(340px,80vw);height:min(300px,70vw);border:2px solid var(--ink);background:#f6eedd;margin:18px 0;overflow:hidden}
+.frame svg{width:100%;height:100%;display:block}
+.br{position:absolute;right:-8px;top:-6px;width:70%;pointer-events:none}
+.sub{max-width:540px;margin:4px 0 18px}
+.go{border:2px solid var(--ink);background:var(--red);color:#fff;font:800 16px "Be Vietnam Pro";padding:11px 30px;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:.2s}
+.go:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+.pt{position:absolute;top:-20px;width:14px;height:10px;border-radius:70% 0 70% 0;background:var(--pink);animation:fall linear infinite;opacity:.9}
+@keyframes fall{to{transform:translate(120px,110vh) rotate(500deg)}}
+.wv{height:46px;background:radial-gradient(circle at 50% 100%,transparent 0 30%,var(--red) 30% 36%,transparent 36% 52%,var(--red) 52% 58%,transparent 58%);background-size:46px 46px;opacity:.85}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 130px}
+.sec{padding:70px 0 0}
+.sh{display:flex;align-items:flex-end;gap:14px;border-bottom:3px solid var(--ink);margin-bottom:20px;padding-bottom:6px}
+.sh em{font:400 clamp(54px,12vw,90px)/.8 Anton;color:var(--red);font-style:normal}
+.sh h2{font:800 clamp(22px,4.4vw,34px)/1.2 "Be Vietnam Pro";letter-spacing:-.5px;padding-bottom:6px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+.card{background:var(--card);border:2px solid var(--ink);padding:20px 24px;margin-bottom:18px;box-shadow:6px 6px 0 var(--red)}
+.card h3{font:800 20px "Be Vietnam Pro";margin-bottom:6px}
+b{font-weight:600}.k{color:var(--red)}.kb{color:var(--blue)}
+ul,ol{margin:6px 0 6px 20px}li{margin:4px 0}
+.ok,.bad,.tip{padding:9px 14px;margin-top:10px;font-size:15px;border-left:5px solid}
+.ok{background:var(--okb);border-color:var(--ok)}.bad{background:var(--nob);border-color:var(--no)}.tip{background:#f8e9b8;border-color:#c99a1c}
+.mu{color:var(--mute)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.g2 .card{margin:0}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:2px solid var(--ink)}
+th{background:var(--red);color:#fff;text-align:left;padding:8px 12px;font:800 14px "Be Vietnam Pro"}th.bl{background:var(--blue)}th.dk{background:var(--ink)}
+td{padding:9px 12px;border-top:1.5px solid var(--line);vertical-align:top}
+td:first-child{font-weight:800;background:#f4ead2}
+.chip{display:inline-block;border:1.5px solid var(--ink);padding:0 10px;margin:3px 4px 3px 0;font-size:14px;background:var(--card);transition:.2s;cursor:default}
+.chip:hover{background:var(--red);color:#fff;transform:translateY(-2px)}
+/* timeline */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs button,.btn{font:800 13.5px "Be Vietnam Pro";border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:4px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:.15s}
+.tabs button:hover,.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.tabs button.on{background:var(--c,var(--red));color:#fff}
+.tlw{background:#fffaf0;border:2px solid var(--ink);padding:8px 4px 4px;margin-top:6px}
+.tlw svg{width:100%;display:block}
+.ax{stroke:#241d1a;stroke-width:3.5}
+.nowl{stroke:#d63a2b;stroke-width:3;stroke-dasharray:7 6}
+.tl{font:800 19px "Be Vietnam Pro"}.ts{font:500 15px "Be Vietnam Pro"}.tbg{font:400 30px Anton}
+.gr{transform-box:fill-box;transform-origin:left center;animation:gr .9s both}
+@keyframes gr{from{transform:scaleX(0)}}
+.pop{transform-box:fill-box;transform-origin:center;animation:pp .5s both}
+@keyframes pp{from{transform:scale(0)}}
+.fd{animation:fd .8s both}
+@keyframes fd{from{opacity:0}}
+.dr{animation:dr 1.1s both}
+@keyframes dr{from{stroke-dashoffset:1}}
+.tcap{margin-top:10px;display:grid;gap:4px}
+.tcap .bd{display:inline-block;color:#fff;font:800 14px "Be Vietnam Pro";padding:0 14px;background:var(--c);justify-self:start}
+.tcap .en{font:600 19px "Be Vietnam Pro"}
+.sig{margin-top:10px;font-size:14px}
+.sig button{font:600 13.5px "Be Vietnam Pro";border:1.5px solid var(--ink);background:var(--card);padding:0 10px;margin:3px 4px 3px 0;cursor:pointer;transition:.15s}
+.sig button:hover,.sig button.on{background:var(--ink);color:#fff}
+/* quick & quiz */
+.qf{background:#fff3c8;border:2px dashed var(--ink);padding:16px 20px;margin:16px 0}
+.qf h4{font:800 16px "Be Vietnam Pro";color:var(--red);margin-bottom:6px}
+.q{background:var(--card);border:2px solid var(--ink);padding:16px 22px;margin-bottom:14px;box-shadow:5px 5px 0 var(--ink);transition:box-shadow .3s}
+.qf .q{box-shadow:none;background:transparent;border:0;border-top:1px solid #d9c98d;padding:10px 0;margin:0}.qf .q:first-of-type{border-top:0}
+.q.ok2{box-shadow:5px 5px 0 var(--ok)}.q.no2{box-shadow:5px 5px 0 var(--no)}
+.n{display:inline-block;background:var(--ink);color:#fff;font:400 15px Anton;letter-spacing:1px;padding:0 12px;margin-bottom:4px}
+.q p.t{font:600 17.5px/1.55 "Be Vietnam Pro";margin-bottom:10px}
+.q u{text-decoration:none;display:inline-block;min-width:56px;border-bottom:3px solid var(--red);text-align:center;color:var(--red);font-weight:800}
+.op{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.op{grid-template-columns:1fr}}
+.op button{display:flex;gap:10px;align-items:center;font:500 15.5px "Be Vietnam Pro";text-align:left;padding:8px 12px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer;transition:.15s}
+.op button b{flex:none;width:26px;height:26px;background:var(--ink);color:#fff;display:grid;place-items:center;font:400 14px Anton}
+.op button:hover:not(:disabled){background:#fff;transform:translateX(4px)}
+.op button:disabled{cursor:default}
+.op .c{background:var(--ok);border-color:var(--ok);color:#fff}.op .c b{background:#fff;color:var(--ok)}
+.op .x{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.op .x b{background:#fff;color:var(--no)}
+@keyframes sk{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.fb{margin-top:10px;padding:10px 14px;font-size:14.5px;border-left:5px solid;animation:up .4s}
+.fb.ok{background:var(--okb);border-color:var(--ok)}.fb.no{background:var(--nob);border-color:var(--no)}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+textarea{width:100%;min-height:58px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 12px;font:16px "Be Vietnam Pro";resize:vertical;margin:6px 0}
+textarea:focus{outline:none;border-color:var(--red)}
+.hint{display:inline-block;border:1.5px dashed var(--red);color:var(--red);font:600 13px "Be Vietnam Pro";padding:0 10px;margin-left:6px}
+.btn.r{background:var(--red);color:#fff}
+#res{background:var(--red);color:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);text-align:center;padding:34px 20px;margin-top:50px}
+#res h2{font:400 40px Anton;letter-spacing:2px}#res .big{font:400 clamp(60px,16vw,110px)/1 Anton}
+#pp{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 12px;font-size:14px}#pp i{font-style:normal;border:1.5px solid #fff;padding:0 12px}
+details{background:var(--card);border:2px solid var(--ink);padding:10px 18px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer}details li{font-size:15px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg id="grain"><filter id="nz"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .15 0 0 0 .9 0"/></filter><rect width="100%" height="100%" filter="url(#nz)"/></svg>
+<div id="top"><div class="tb"><b>PERFECT</b><div class="pg"><i id="pg"></i></div><span id="st">0/53</span><span class="o" id="so">✔ 0</span><span class="w" id="sw">✘ 0</span><button id="snd" aria-label="Âm thanh">🔊</button></div></div>
+
+<header>
+  <div id="pts"></div>
+  <div class="vert">TENSES</div><div class="seal">THÌ</div>
+  <h1>PERFECT</h1>
+  <div class="ko">현재 완료</div><div class="cap">THÌ HIỆN TẠI HOÀN THÀNH · PRESENT PERFECT</div>
+  <div class="frame">
+    <svg viewBox="0 0 300 260"><rect width="300" height="260" fill="#f6eedd"/><circle cx="115" cy="85" r="64" fill="#d63a2b"/><circle cx="165" cy="130" r="58" fill="#2b2420" opacity=".88"/>
+    <g><rect x="30" y="196" width="240" height="26" fill="#3b332d"/><path d="M120 222a30 22 0 0 1 60 0z" fill="#f6eedd"/><rect x="62" y="156" width="176" height="40" fill="#b8352a"/><path d="M78 156v40M104 156v40M130 156v40M156 156v40M182 156v40M208 156v40M224 156v40" stroke="#6b1d16" stroke-width="3"/><path d="M36 160Q150 144 264 160Q244 152 232 138L68 138Q56 152 36 160Z" fill="#2b2420"/><rect x="100" y="106" width="100" height="32" fill="#c23c30"/><path d="M82 110Q150 92 218 110Q202 102 192 88L108 88Q98 102 82 110Z" fill="#2b2420"/><path d="M130 88Q150 70 170 88Z" fill="#2b2420"/></g>
+    <path d="M0 222h300v38H0z" fill="#8a8e8a" opacity=".5"/><path d="M0 232q15-8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/></svg>
+    <svg class="br" id="br" viewBox="0 0 280 200"></svg>
+  </div>
+  <p class="sub">Cầu nối giữa quá khứ và hiện tại: bản chất, cấu trúc, phân biệt với Quá khứ đơn và Quá khứ hoàn thành, kèm <b>trục thời gian minh họa</b> và bài tập thực chiến.</p>
+  <button class="go" id="go">Bắt đầu học ➔</button>
+</header>
+<div class="wv"></div>
+
+<main class="wrap">
+<section class="sec" id="p1">
+  <div class="sh rv"><em>01</em><h2>Bản chất và cách sử dụng (Present Perfect)</h2></div>
+  <div class="card rv"><p><b>Hiện tại hoàn thành (HTHT)</b> là <b class="k">cầu nối giữa Quá khứ và Hiện tại</b>. Ta không dùng nó để kể lại một câu chuyện lịch sử đã kết thúc, mà dùng khi một việc trong quá khứ <b>VẪN CÒN ẢNH HƯỞNG HOẶC LIÊN QUAN</b> đến hiện tại.</p></div>
+  <div class="g2">
+    <div class="card rv"><h3><span class="k">1.</span> Còn tiếp tục</h3><p>Hành động bắt đầu trong quá khứ và <b>VẪN ĐANG TIẾP TỤC</b> ở hiện tại.</p><div class="ok">Tôi đã sống ở đây được 10 năm ➤ bây giờ vẫn đang sống ở đây.</div></div>
+    <div class="card rv"><h3><span class="k">2.</span> Trải nghiệm</h3><p>Trải nghiệm, kinh nghiệm sống (tính đến hiện tại). Thường đi với <b>ever / never</b>.</p><div class="ok">Tôi đã từng đến Paris 3 lần ➤ tính đến nay là 3 lần, tương lai có thể đi tiếp.</div></div>
+    <div class="card rv"><h3><span class="k">3.</span> Kết quả còn lại</h3><p>Hành động vừa xảy ra hoặc xảy ra trong quá khứ nhưng <b>KẾT QUẢ</b> còn lưu lại ở hiện tại (không rõ thời gian cụ thể).</p><div class="ok">Tôi bị mất chìa khóa rồi ➤ quan trọng là <b>BÂY GIỜ</b> tôi không vào được nhà.</div></div>
+  </div>
+</section>
+
+<section class="sec" id="p2">
+  <div class="sh rv"><em>02</em><h2>Cấu trúc và dấu hiệu nhận biết</h2></div>
+  <div class="card rv"><h3>1. Cấu trúc ngữ pháp</h3><div class="tw"><table><tr><th>Thể</th><th>Công thức &amp; ví dụ</th></tr>
+  <tr><td>Khẳng định (+)</td><td>S + have / has + V3/ed<br><i class="mu">She has finished her homework.</i></td></tr>
+  <tr><td>Phủ định (−)</td><td>S + have / has + NOT + V3/ed (haven't / hasn't)<br><i class="mu">They haven't met him yet.</i></td></tr>
+  <tr><td>Nghi vấn (?)</td><td>Have / Has + S + V3/ed?<br><i class="mu">Have you ever eaten sushi?</i></td></tr></table></div>
+  <div class="tip"><b>Lưu ý:</b> dùng <b>has</b> với chủ ngữ số ít (He, She, It, Lan). Dùng <b>have</b> với I, You, We, They, số nhiều.</div></div>
+  <div class="card rv"><h3>2. Dấu hiệu nhận biết và vị trí trong câu</h3><p class="mu">Các trạng từ sau luôn đi kèm HTHT. Chú ý vị trí của chúng:</p>
+  <ul><li><b>Since + mốc thời gian</b> (since 2010, since I was a child): kể từ khi...</li><li><b>For + khoảng thời gian</b> (for 3 years, for a long time): trong khoảng...</li><li><b>Just, Already</b> (vừa mới, rồi): đứng <b>GIỮA</b> have/has và V3/ed. <i class="mu">(I have just finished it.)</i></li><li><b>Yet</b> (chưa): dùng trong câu <b>phủ định và nghi vấn</b>, luôn đứng <b>CUỐI</b> câu. <i class="mu">(I haven't finished it yet.)</i></li><li><b>Ever</b> (đã từng), <b>Never</b> (chưa bao giờ): đứng <b>GIỮA</b> have/has và V3/ed.</li><li><b>Recently, Lately, So far, Up to now</b> (gần đây, cho đến nay): thường đứng ở đầu hoặc cuối câu.</li></ul></div>
+  <div class="qf rv" id="qf"></div>
+</section>
+
+<section class="sec" id="p3">
+  <div class="sh rv"><em>03</em><h2>Minh họa trục thời gian</h2></div>
+  <div class="card rv"><p>Hình dung thời gian như một <b>đường thẳng</b>: quá khứ bên trái, <b class="k">HIỆN TẠI</b> là vạch đỏ, tương lai bên phải. Chọn từng tình huống để xem mỗi thì “nằm” ở đâu trên trục. <span style="color:var(--red)">■</span> Hiện tại hoàn thành &nbsp;<span style="color:var(--ink)">■</span> Quá khứ đơn &nbsp;<span style="color:var(--blue)">■</span> Quá khứ hoàn thành</p>
+  <div class="tabs" id="tt"></div>
+  <div class="tlw"><svg id="tsv" viewBox="0 0 600 250"></svg></div>
+  <div class="tcap" id="tcap"></div>
+  <div class="sig" id="sig"><b>Thử dấu hiệu nhận biết:</b> <span id="sgb"></span></div></div>
+</section>
+
+<section class="sec" id="p4">
+  <div class="sh rv"><em>04</em><h2>Phân biệt trọng tâm: HTHT với QKĐ và QKHT</h2></div>
+  <div class="card rv"><h3>1. So sánh HTHT và Quá khứ đơn (QKĐ)</h3><div class="tw"><table><tr><th class="dk">Quá khứ đơn (S + V2/ed)</th><th>Hiện tại hoàn thành (S + have/has + V3/ed)</th></tr>
+  <tr><td style="font-weight:400;background:none">Hành động đã <b>CHẤM DỨT HOÀN TOÀN</b> ở quá khứ, không liên quan đến hiện tại.</td><td>Hành động <b>VẪN CÒN KÉO DÀI</b> đến hiện tại hoặc kết quả còn ở hiện tại.</td></tr>
+  <tr><td style="font-weight:400;background:none">Thời gian <b>XÁC ĐỊNH RÕ RÀNG</b> (yesterday, last night, in 1990, 2 days ago).</td><td>Thời gian <b>KHÔNG RÕ RÀNG</b>, mang tính trải nghiệm hoặc tích lũy (since, for, ever, just).</td></tr>
+  <tr><td style="font-weight:400;background:none">VD: I lost my key <b>yesterday</b>. (Hôm qua mất, hôm nay có thể tìm thấy rồi.)</td><td>VD: I <b>have lost</b> my key. (Mất lúc nào không rõ, nhưng hiện tại KHÔNG VÀO ĐƯỢC NHÀ.)</td></tr></table></div></div>
+  <div class="card rv"><h3>2. So sánh HTHT và Quá khứ hoàn thành (QKHT)</h3><p><b class="kb">Quá khứ hoàn thành (Past Perfect): S + had + V3/ed.</b> Bản chất của QKHT là <b>“quá khứ của quá khứ”</b>: diễn tả một hành động đã xảy ra và <b>KẾT THÚC TRƯỚC</b> một hành động khác trong quá khứ.</p><p style="margin-top:8px"><b>Sự khác biệt căn bản:</b></p>
+  <ul><li><b class="k">HTHT:</b> kéo dài từ quá khứ đến <b>HIỆN TẠI</b>. <i class="mu">(I have lived here for 5 years ➤ bây giờ vẫn sống ở đây.)</i></li><li><b class="kb">QKHT:</b> kéo dài từ quá khứ đến một thời điểm <b>TRONG QUÁ KHỨ</b>, rồi chấm dứt trước khi hành động khác xảy ra. <i class="mu">(I had lived there for 5 years before I moved to Hanoi ➤ bây giờ không còn sống ở đó nữa.)</i></li></ul>
+  <div class="tip"><b>Cấu trúc thường gặp:</b> Before / By the time + QKĐ, QKHT. Hoặc: After + QKHT, QKĐ.</div>
+  <div class="ok"><b>[Ví dụ QKHT]</b> After he <b>had finished</b> his homework, he went to bed. <i class="mu">(Làm bài tập xong trước, đi ngủ sau. Cả hai việc đều ở quá khứ.)</i></div>
+  <div class="ok"><b>[Ví dụ QKHT]</b> When I arrived at the station, the train <b>had left</b>. <i class="mu">(Đến nhà ga thì tàu ĐÃ ĐI MẤT RỒI.)</i></div></div>
+</section>
+
+<section class="sec" id="p5">
+  <div class="sh rv"><em>05</em><h2>Trắc nghiệm trộn lẫn HTHT và QKĐ (40 câu)</h2></div>
+  <p class="mu rv" style="margin-bottom:16px"><b>Yêu cầu:</b> phân tích kỹ các trạng từ chỉ thời gian (yesterday, since, for, last, yet...) để quyết định dùng QKĐ hay HTHT.</p>
+  <div id="mq"></div>
+</section>
+
+<section class="sec" id="p6">
+  <div class="sh rv"><em>06</em><h2>Bài tập dịch thuật: Quá khứ hoàn thành (10 câu)</h2></div>
+  <p class="mu rv" style="margin-bottom:16px">Dùng S + had + V3/ed kết hợp với Quá khứ đơn, chú ý các từ nối <b>Before, After, When</b>. Viết xong bấm kiểm tra để xem đáp án rồi tự chấm.</p>
+  <div id="ts"></div>
+</section>
+
+<section class="sec" id="p7">
+  <div class="sh rv"><em>07</em><h2>Đáp án bài tập vận dụng nhanh</h2></div>
+  <div id="ans" class="rv"></div>
+  <div id="res" class="rv"><h2>KẾT QUẢ CỦA BẠN</h2><div class="big" id="big">0 / 53</div><div id="pp"></div><p id="msg">Hoàn thành tất cả bài tập để nhận lời nhắn nhé.</p><button class="btn" onclick="location.reload()">Làm lại từ đầu ↺</button></div>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+let ac,on=true;
+function tone(f,t,d,ty,v,to){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d+.05)}
+function sfx(ok){if(!on)return;ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();const t=ac.currentTime;if(ok)[660,880,1175].forEach((f,i)=>tone(f,t+i*.09,.4,"sine",.16));else{tone(300,t,.3,"triangle",.16,190);tone(220,t+.15,.35,"triangle",.14,150)}}
+$("#snd").onclick=()=>{on=!on;$("#snd").textContent=on?"🔊":"🔇"};
+/* ===== timeline ===== */
+const C={r:"#d63a2b",k:"#241d1a",b:"#1d4f91",g:"#9a8f84"};
+const T=(x,y,t,c,cl,a)=>`<text x="${x}" y="${y}" text-anchor="${a||"middle"}" class="${cl||"tl"}" fill="${C[c]||c}">${t}</text>`;
+const P=(x,y,c,d)=>`<circle class="pop" style="animation-delay:${d||0}s" cx="${x}" cy="${y}" r="11" fill="${C[c]}" stroke="#fffaf0" stroke-width="3"/>`;
+const SP=(x1,x2,y,c,d,op)=>`<rect class="gr" style="animation-delay:${d||0}s" x="${x1}" y="${y}" width="${x2-x1}" height="18" rx="9" fill="${C[c]}" opacity="${op||1}"/>`;
+const AR=(x1,y1,x2,y2,c,d,dash)=>`<path class="${dash?"fd":"dr"}" pathLength="1" style="animation-delay:${d||0}s" d="M${x1} ${y1}L${x2} ${y2}" stroke="${C[c]}" stroke-width="4" fill="none" ${dash?'stroke-dasharray="9 7"':'stroke-dasharray="1"'}/><path class="fd" style="animation-delay:${(d||0)+.9}s" d="M${x2} ${y2}l-12 -8v16z" fill="${C[c]}"/>`;
+function axis(y,now,lbl){return `<line x1="20" y1="${y}" x2="572" y2="${y}" class="ax"/><path d="M572 ${y-9}L590 ${y}L572 ${y+9}Z" fill="#241d1a"/>`+(lbl?"":T(24,y+62,"QUÁ KHỨ","g","ts","start")+T(588,y+62,"TƯƠNG LAI","g","ts","end"))}
+function nowL(x,y1,y2){return `<line class="nowl" x1="${x}" y1="${y1}" x2="${x}" y2="${y2}"/>`+T(x,y2+22,"HIỆN TẠI","r")}
+const N=400;
+const SC=[
+{n:"HTHT · còn tiếp tục",c:"r",bd:"Hiện tại hoàn thành",en:"I have lived here for 10 years.",vi:"Bắt đầu từ quá khứ (2015) và kéo dài đến tận bây giờ, vẫn đang sống ở đây. Dấu hiệu: <b>since / for</b>.",svg:()=>axis(150)+nowL(N,70,205)+P(100,150,"r")+T(100,184,"2015","k")+T(100,204,"bắt đầu","g","ts")+SP(100,N,112,"r",.3)+T(250,100,"have lived here · 10 năm","r")+AR(N,121,545,121,"r",1.2,1)+T(490,100,"vẫn tiếp tục…","r","ts")},
+{n:"HTHT · trải nghiệm",c:"r",bd:"Hiện tại hoàn thành",en:"I have been to Paris 3 times.",vi:"Tính đến nay đã đi 3 lần, tương lai có thể đi tiếp. Dấu hiệu: <b>ever / never / so far / up to now</b>.",svg:()=>axis(150)+nowL(N,70,205)+SP(110,N,112,"r",.2,.35)+P(110,150,"r",.3)+P(200,150,"r",.6)+P(290,150,"r",.9)+T(110,184,"lần 1","k")+T(200,184,"lần 2","k")+T(290,184,"lần 3","k")+T(255,100,"have been to Paris","r")+T(N,52,"Tính đến nay: 3 lần","r","ts")+AR(N,121,545,121,"r",1.3,1)+T(490,100,"có thể đi tiếp","g","ts")},
+{n:"HTHT · kết quả ở hiện tại",c:"r",bd:"Hiện tại hoàn thành",en:"I have lost my key.",vi:"Mất lúc nào không rõ, nhưng quan trọng là <b>BÂY GIỜ</b> không vào được nhà. Dấu hiệu: <b>just / already / yet / recently</b>.",svg:()=>axis(150)+nowL(N,60,205)+P(190,150,"r")+T(190,118,"?","r","tbg")+T(190,184,"không rõ lúc nào","g","ts")+`<path class="dr" pathLength="1" style="animation-delay:.4s" d="M196 138Q300 30 ${N-6} 138" stroke="#d63a2b" stroke-width="4" fill="none" stroke-dasharray="1"/><path class="fd" style="animation-delay:1.3s" d="M${N-6} 138l-3 -14l-11 9z" fill="#d63a2b"/>`+T(296,62,"have lost my key","r")+T(N,40,"🔒 không vào được nhà","r","ts")},
+{n:"QKĐ · đã chấm dứt",c:"k",bd:"Quá khứ đơn",en:"I lost my key yesterday.",vi:"Mốc thời gian <b>rõ ràng</b>, việc đã chấm dứt hoàn toàn, <b>không nối</b> với hiện tại (hôm nay có thể đã tìm thấy). Dấu hiệu: <b>yesterday / last night / ago / in 1990</b>.",svg:()=>axis(150)+nowL(N,70,205)+P(190,150,"k")+T(190,184,"yesterday","k")+T(190,204,"mốc rõ ràng","g","ts")+`<rect class="gr" x="182" y="110" width="16" height="18" fill="#241d1a"/>`+T(190,100,"lost · đã xong","k","tl","middle")+`<line class="fd" style="animation-delay:.6s" x1="215" y1="121" x2="${N-10}" y2="121" stroke="#9a8f84" stroke-width="3" stroke-dasharray="4 8"/>`+T(318,84,"✕ không nối với hiện tại","g","ts")},
+{n:"QKHT · quá khứ của quá khứ",c:"b",bd:"Quá khứ hoàn thành",en:"When I arrived at the station, the train had left.",vi:"Hai việc đều ở quá khứ: tàu <b>đã đi</b> (xảy ra trước, <b>had left</b>) rồi tôi mới đến ga (QKĐ, <b>arrived</b>).",svg:()=>axis(150)+nowL(450,70,205)+P(170,150,"b")+T(170,184,"tàu rời đi","b")+T(170,204,"had left","b","ts")+P(340,150,"k",.5)+T(340,184,"tôi đến ga","k")+T(340,204,"arrived (QKĐ)","k","ts")+AR(182,118,328,118,"b",.9)+T(255,100,"xảy ra TRƯỚC","b")},
+{n:"So sánh HTHT và QKHT",c:"b",bd:"HTHT với QKHT",en:"have lived here 5 years  vs  had lived there 5 years",vi:"<b class='k'>HTHT</b> kéo dài tới <b>hiện tại</b> (vẫn đang sống ở đây). <b class='kb'>QKHT</b> kéo dài tới một mốc <b>trong quá khứ</b> (trước khi chuyển đi Hà Nội), nay không còn ở đó.",vb:"0 0 600 300",svg:()=>`<line x1="20" y1="95" x2="572" y2="95" class="ax"/><path d="M572 86L590 95L572 104Z" fill="#241d1a"/><line x1="20" y1="225" x2="572" y2="225" class="ax"/><path d="M572 216L590 225L572 234Z" fill="#241d1a"/>`+`<line class="nowl" x1="${N}" y1="40" x2="${N}" y2="262"/>`+T(N,285,"HIỆN TẠI","r")+T(24,22,"HTHT","r","tl","start")+SP(100,N,64,"r",.2)+P(100,95,"r")+T(250,54,"have lived here for 5 years","r")+AR(N,73,545,73,"r",1,1)+T(490,54,"vẫn tiếp tục…","r","ts")+T(24,160,"QKHT","b","tl","start")+SP(100,300,194,"b",.5)+P(100,225,"b",.4)+P(300,225,"k",1.2)+T(200,184,"had lived there for 5 years","b")+T(300,258,"moved to Hanoi","k","ts")+T(430,200,"✕ nay không còn ở đó","g","ts","start")}
+];
+const SG=[["since 2015",0],["for 10 years",0],["ever",1],["never",1],["so far",1],["just",2],["already",2],["yet",2],["recently",2],["yesterday",3],["last night",3],["2 days ago",3],["in 1990",3],["before / by the time",4]];
+$("#tt").innerHTML=SC.map((s,i)=>`<button data-i="${i}" style="--c:${C[s.c]}">${s.n}</button>`).join("");
+$("#sgb").innerHTML=SG.map(g=>`<button data-s="${g[1]}" data-w="${g[0]}">${g[0]}</button>`).join("");
+function tl(i,w){const s=SC[i];$("#tsv").setAttribute("viewBox",s.vb||"0 0 600 250");$("#tsv").innerHTML=s.svg();document.querySelectorAll("#tt button").forEach((b,k)=>b.classList.toggle("on",k==i));
+document.querySelectorAll("#sgb button").forEach(b=>b.classList.toggle("on",b.dataset.w==w));
+$("#tcap").style.setProperty("--c",C[s.c]);$("#tcap").innerHTML=`<span class="bd">${s.bd}</span><div class="en">${s.en}</div><div>${w?`Dấu hiệu <b>“${w}”</b> ➤ `:""}${s.vi}</div>`}
+document.querySelectorAll("#tt button").forEach(b=>b.onclick=()=>tl(+b.dataset.i));
+document.querySelectorAll("#sgb button").forEach(b=>b.onclick=()=>tl(+b.dataset.s,b.dataset.w));tl(0);
+/* ===== questions ===== */
+const S={f:[0,0],q:[0,0],t:[0,0]},TOT=53,L="ABCD";
+function upd(){const a=S.f[1]+S.q[1]+S.t[1],o=S.f[0]+S.q[0]+S.t[0];$("#pg").style.width=a/TOT*100+"%";$("#st").textContent=a+"/"+TOT;$("#so").textContent="✔ "+o;$("#sw").textContent="✘ "+(a-o);$("#big").textContent=o+" / "+TOT;$("#pp").innerHTML=`<i>Bài nhanh: ${S.f[0]}/3</i><i>Trắc nghiệm: ${S.q[0]}/40</i><i>Dịch: ${S.t[0]}/10</i>`;
+if(a==TOT){const p=o/TOT;$("#msg").textContent=p>=.9?"Xuất sắc! Bạn nắm chắc HTHT, QKĐ và QKHT.":p>=.7?"Khá tốt! Xem lại vài câu sai rồi thử lại nhé.":"Cố lên! Xem lại trục thời gian và làm lại nha.";$("#res").scrollIntoView({block:"center"})}}
+function QC(q,n,g,cls){const d=document.createElement("div"),o=q[1].split("|");d.className="q"+(cls?" rv":"");d.innerHTML=`<span class="n">${n}</span><p class="t">${q[0].replace(/_{3,}/g,"<u>&nbsp;</u>")}</p><div class="op">${o.map((t,j)=>`<button data-j="${j}"><b>${L[j]}</b>${t}</button>`).join("")}</div><div class="fb" style="display:none"></div>`;
+const bs=d.querySelectorAll("button"),fb=d.querySelector(".fb");bs.forEach(b=>b.onclick=()=>{const j=+b.dataset.j,ok=j==q[2];bs.forEach(x=>x.disabled=true);bs[q[2]].classList.add("c");if(!ok)b.classList.add("x");d.classList.add(ok?"ok2":"no2");fb.style.display="block";fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"✅ <b>Chính xác!</b> ":`❌ <b>Chưa đúng.</b> Đáp án đúng là <b>${L[q[2]]}. ${o[q[2]]}</b>. `)+q[3];S[g][0]+=ok;S[g][1]++;sfx(ok);upd()});return d}
+const QF=[["We haven't seen him (since / for) ___ a long time.","since|for",1,"<b>for</b>: “a long time” là khoảng thời gian (since đi với mốc thời gian)."],["I have (already / yet) ___ done my homework. You don't need to remind me.","already|yet",0,"<b>already</b>: đứng giữa have và done, nghĩa là “đã làm rồi”."],["Has she called you (already / yet) ___?","already|yet",1,"<b>yet</b>: đứng cuối câu hỏi, nghĩa là “đã làm chưa”."]];
+$("#qf").innerHTML=`<h4>✏ Bài tập vận dụng nhanh (Mini-Test): chọn từ đúng</h4>`;QF.forEach((q,i)=>$("#qf").appendChild(QC(q,"Câu "+(i+1),"f")));
+$("#ans").innerHTML=`<details open><summary>Đáp án Mini-Test (Phần 2)</summary><ul><li>1. <b>for</b> (a long time là khoảng thời gian)</li><li>2. <b>already</b> (đứng giữa have và done, nghĩa “đã làm rồi”)</li><li>3. <b>yet</b> (đứng cuối câu hỏi, nghĩa “đã làm chưa”)</li></ul></details>`;
+const Q=[
+["We ___ in this house since 2015.","live|are living|lived|have lived",3,"“Since 2015” (mốc thời gian, còn kéo dài) → HTHT: <b>have lived</b>."],
+["She ___ a new car two days ago.","bought|has bought|is buying|buys",0,"“Two days ago” là mốc quá khứ xác định → QKĐ: <b>bought</b>."],
+["I ___ my keys. I can't open the door now.","lose|have lost|was losing|lost",1,"“Can't open the door now”: kết quả còn ở hiện tại → HTHT: <b>have lost</b>."],
+["___ you ever ___ to Japan?","Are / going|Do / go|Have / been|Did / go",2,"“Ever” (trải nghiệm) → HTHT: <b>Have you ever been to</b> Japan?"],
+["He ___ his homework yet.","didn't finish|hasn't finished|doesn't finish|hasn't finish",1,"“Yet” trong câu phủ định → HTHT: <b>hasn't finished</b> (sau hasn't dùng V3)."],
+["They ___ to London last summer.","have travelled|travelled|were travelling|travel",1,"“Last summer” là mốc quá khứ xác định → QKĐ: <b>travelled</b>."],
+["I ___ this movie three times.","am seeing|see|saw|have seen",3,"“Three times” tính đến hiện tại (trải nghiệm) → HTHT: <b>have seen</b>."],
+["My uncle ___ in that company for ten years, but he retired last year.","is working|has worked|worked|works",2,"“He retired last year”: việc đã chấm dứt hoàn toàn → QKĐ: <b>worked</b>."],
+["It ___ heavily last night.","is raining|has rained|rains|rained",3,"“Last night” → QKĐ: <b>rained</b>."],
+["We ___ each other since we left high school.","didn't see|haven't seen|don't see|haven't saw",1,"“Since we left...” → HTHT: <b>haven't seen</b> (V3 của see là seen)."],
+["When ___ you ___ this dress? - Yesterday.","are / buying|did / buy|have / bought|do / buy",1,"Câu trả lời “Yesterday” là mốc xác định; hỏi “When” → QKĐ: <b>did you buy</b>."],
+["She ___ just ___ writing the report.","did / finish|is / finishing|had / finished|has / finished",3,"“Just” đứng giữa have/has và V3 → HTHT: <b>has just finished</b>."],
+["The concert ___ at 8 PM yesterday.","starts|has started|started|was starting",2,"“Yesterday” → QKĐ: <b>started</b>."],
+["I ___ English for five years. I'm still learning it.","study|studied|am studying|have studied",3,"“For five years” và “still learning” (vẫn đang học) → HTHT: <b>have studied</b>."],
+["___ you see Mary at the party last night?","Did|Do|Have|Had",0,"“Last night” → QKĐ: <b>Did</b> you see...?"],
+["Up to now, the teacher ___ us 5 tests.","gave|is giving|gives|has given",3,"“Up to now” (cho đến nay) → HTHT: <b>has given</b>."],
+["He ___ a lot of books when he was a university student.","read|reads|has read|reading",0,"“When he was a university student”: giai đoạn đã qua → QKĐ: <b>read</b>."],
+["I ___ already ___ my breakfast, so I am not hungry.","did / have|have / had|had / had|have / have",1,"“Already” + kết quả hiện tại (không đói) → HTHT: <b>have already had</b> (had là V3 của have)."],
+["Shakespeare ___ Romeo and Juliet.","wrote|has written|is writing|writes",0,"Việc đã xong trong quá khứ xa, không liên quan hiện tại → QKĐ: <b>wrote</b>."],
+["The weather ___ terrible recently.","is|had been|has been|was",2,"“Recently” → HTHT: <b>has been</b>."],
+["I ___ him for a long time.","am not meeting|don't meet|haven't met|didn't meet",2,"“For a long time” (khoảng thời gian đến nay) → HTHT: <b>haven't met</b>."],
+["Tom ___ his leg in a skiing accident last winter.","broke|breaks|has broken|was breaking",0,"“Last winter” → QKĐ: <b>broke</b>."],
+["She ___ a lot of awards so far.","wins|won|winning|has won",3,"“So far” (cho đến nay) → HTHT: <b>has won</b>."],
+["We ___ dinner at a nice restaurant yesterday evening.","were having|have|had|have had",2,"“Yesterday evening” → QKĐ: <b>had</b> dinner (had là QKĐ của have)."],
+["___ she ever ___ a famous person?","Has / meet|Has / met|Does / meet|Did / meet",1,"“Ever” → HTHT: <b>Has she ever met</b> (met là V3 của meet)."],
+["My parents ___ married in 1995.","have got|are getting|get|got",3,"“In 1995” là mốc quá khứ xác định → QKĐ: <b>got</b> married."],
+["How long ___ you ___ here? - Since Monday.","do / wait|did / wait|are / waiting|have / waited",3,"“Since Monday” → HTHT: <b>have you waited</b>."],
+["He ___ his keys. He is looking for them everywhere.","loses|has lost|was losing|lost",1,"Đang đi tìm chìa khóa (kết quả còn ở hiện tại) → HTHT: <b>has lost</b>."],
+["I ___ to the cinema yesterday.","going|have gone|went|go",2,"“Yesterday” → QKĐ: <b>went</b>."],
+["This is the most interesting book I ___.","ever read|have ever read|am reading|read ever",1,"Cấu trúc so sánh nhất + I <b>have ever</b> V3 → <b>have ever read</b>."],
+["The train ___ 10 minutes ago.","has left|is leaving|leaves|left",3,"“10 minutes ago” → QKĐ: <b>left</b>."],
+["We ___ in London for 3 years before moving to Paris.","live|are living|have lived|lived",3,"Việc đã chấm dứt (đã chuyển đi Paris) → <b>lived</b> (QKĐ, theo đáp án của file)."],
+["I ___ a great movie on TV last night.","was watching|watch|have watched|watched",3,"“Last night” → QKĐ: <b>watched</b>."],
+["She ___ sick since last week.","had been|was|has been|is",2,"“Since last week” → HTHT: <b>has been</b>."],
+["___ you finish the project yet?","Did|Have|Do|Are",1,"“Yet” trong câu hỏi → HTHT: <b>Have</b> you finished...?"],
+["My brother ___ a new computer last month.","bought|is buying|buys|has bought",0,"“Last month” → QKĐ: <b>bought</b>."],
+["I ___ coffee this morning, so I feel awake now.","drank|am drinking|drink|have drunk",3,"Kết quả còn ở hiện tại (“I feel awake now”) → HTHT: <b>have drunk</b>."],
+["They ___ the building in 2010.","are constructing|construct|constructed|have constructed",2,"“In 2010” là mốc quá khứ xác định → QKĐ: <b>constructed</b>."],
+["He ___ English before he moved to the US.","has studied|studied|study|studies",1,"Việc xảy ra ở quá khứ, trước khi chuyển đi Mỹ → <b>studied</b> (theo đáp án của file; có thể diễn đạt bằng QKHT had studied nhưng không có trong các lựa chọn)."],
+["Oh no! Someone ___ my bike. It's not here.","has stolen|was stealing|steals|stole",0,"“It's not here” (kết quả còn ở hiện tại) → HTHT: <b>has stolen</b>."]];
+Q.forEach((q,i)=>$("#mq").appendChild(QC(q,"CÂU "+(i+1),"q",1)));
+/* translate */
+const TR=[["Khi tôi đến nhà ga, chuyến tàu đã rời đi.","left","When I arrived at the station, the train had left.","when + QKĐ, QKHT: tàu đi trước, tôi đến sau."],["Cậu bé đã ăn tối xong trước khi cậu ấy đi ngủ.","eaten","The boy had eaten dinner before he went to bed. (Hoặc: Before the boy went to bed, he had eaten dinner.)","Before + QKĐ; việc xảy ra trước dùng had + V3."],["Tôi chưa bao giờ nhìn thấy một con gấu (bear) trước khi tôi đến sở thú hôm qua.","never","I had never seen a bear before I went to the zoo yesterday.","had never + V3 diễn tả chưa từng trải qua tính đến mốc quá khứ."],["Cô ấy không thể vào nhà vì cô ấy đã làm mất chìa khóa.","lost","She couldn't enter the house because she had lost her keys.","Việc làm mất xảy ra trước việc không vào được nhà."],["Họ đã sống ở London 5 năm trước khi họ chuyển đến New York.","lived","They had lived in London for 5 years before they moved to New York.","had lived for 5 years: kéo dài tới mốc quá khứ rồi chấm dứt."],["Khi mẹ tôi về, tôi đã làm xong bài tập về nhà.","finished","When my mother came back, I had finished my homework.","Làm xong trước khi mẹ về → had finished."],["Chúng tôi đã dọn dẹp nhà cửa xong xuôi trước khi khách đến.","cleaned","We had cleaned the house before the guests arrived.","Before + QKĐ, việc trước dùng QKHT."],["Sau khi anh ấy hoàn thành công việc, anh ấy đi dạo (went for a walk).","finished","After he had finished his work, he went for a walk.","After + QKHT, QKĐ."],["Cô ấy rất mệt vì cô ấy đã làm việc cả ngày.","worked","She was very tired because she had worked all day.","Nguyên nhân xảy ra trước kết quả → had worked."],["Chiếc xe bị hỏng (broke down) vì anh ấy đã không bảo dưỡng nó (maintain).","maintained","The car broke down because he hadn't maintained it.","hadn't + V3: chưa bảo dưỡng trước khi xe hỏng."]];
+TR.forEach((t,i)=>{const c=document.createElement("div");c.className="q rv";c.innerHTML=`<span class="n">CÂU ${i+1}</span><p class="t">${t[0]} <span class="hint">had + V3</span></p><textarea placeholder="Viết câu tiếng Anh của bạn..."></textarea><button class="btn r">Kiểm tra</button><div class="fb" style="display:none"></div>`;
+const ta=c.querySelector("textarea"),fb=c.querySelector(".fb"),bt=c.querySelector(".btn");bt.onclick=()=>{if(bt.disabled)return;bt.disabled=true;ta.readOnly=true;const v=ta.value.toLowerCase();fb.style.display="block";fb.className="fb ok";
+fb.innerHTML=`${v.trim()?(/\bhad\b|hadn't/.test(v)?"👍 Bạn đã dùng <b>had</b> (QKHT).":"💡 Bạn chưa dùng <b>had + V3</b>."):"💡 Bạn chưa nhập câu nào."}<br><b>Đáp án:</b> ${t[2]}<br><i>Lưu ý:</i> ${t[3]}<div style="margin-top:6px"><button class="btn" data-r="1">Mình viết đúng</button> <button class="btn" data-r="0">Cần luyện thêm</button></div>`;
+fb.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{S.t[0]+=+b.dataset.r;S.t[1]++;fb.querySelector("div").innerHTML=b.dataset.r=="1"?"🎉 Tuyệt, đã ghi nhận!":"🔁 Không sao, đọc lại đáp án rồi thử lần sau nhé.";sfx(b.dataset.r=="1");upd()})};$("#ts").appendChild(c)});
+/* fx */
+$("#go").onclick=()=>$("#p1").scrollIntoView();
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}}),{threshold:.06});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+addEventListener("scroll",()=>$("#top").classList.toggle("on",scrollY>innerHeight*.8));
+$("#pts").innerHTML=Array.from({length:14},(_,i)=>`<i class="pt" style="left:${Math.random()*100}%;animation-duration:${9+Math.random()*7}s;animation-delay:${-i*1.3}s"></i>`).join("");
+(function(){let s=`<path d="M280 20C210 30 170 60 120 100C90 124 60 140 20 150" stroke="#4a2f2a" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M200 44C190 70 170 84 160 110M120 100C110 80 96 70 80 62" stroke="#4a2f2a" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+[[250,26],[222,34],[196,52],[176,70],[150,92],[130,104],[104,116],[76,132],[44,142],[196,76],[168,100],[84,70],[100,88],[238,44]].forEach(([x,y])=>{for(let k=0;k<5;k++){const a=k*72*Math.PI/180;s+=`<circle cx="${x+Math.cos(a)*6}" cy="${y+Math.sin(a)*6}" r="6" fill="#f2a3ad"/>`}s+=`<circle cx="${x}" cy="${y}" r="3" fill="#d63a2b"/>`});$("#br").innerHTML=s})();
+upd();
+</script>
+</body>
+</html>
